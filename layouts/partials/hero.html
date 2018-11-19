@@ -1,0 +1,26 @@
+	<section id="fh5co-home" data-section="home" style="background-image: url(images/full_image_2.jpg);" data-stellar-background-ratio="0.5">
+		<div class="gradient"></div>
+		<div class="container">
+			<div class="text-wrap">
+				<div class="text-inner">
+					<div class="row">
+						<div class="col-md-8 col-md-offset-2">
+							{{ range first 1 (shuffle (where .Site.RegularPages "Section" "quotes")) }}
+								<h1 class="to-animate">
+									{{ .Params.title | title }}
+								</h1>
+								<h2 class="to-animate">
+									{{ .Content }}
+								</h2>
+							{{ end }}
+							{{ range first 1 (where .Site.RegularPages "Section" "!=" "quotes") }}
+								<h1>Latest Post:</h1>
+								<h2><a href="{{ .Permalink }}">{{.Params.title}}</a></h2>
+							{{ end }}
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="slant"></div>
+	</section>h
